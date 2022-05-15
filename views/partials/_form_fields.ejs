@@ -1,0 +1,15 @@
+<div>
+    <label for="title">Title</label>
+    <input required type="text" name="title" id="title" value="<%= article.title %>">
+</div>
+<div>
+    <label for="description">Description</label>
+    <textarea name="description" id="description"><%= article.description %></textarea>
+</div>
+<div>
+    <label for="markdown">Markdown</label>
+    <textarea required name="markdown" id="markdown"><%= article.markdown %></textarea>
+</div>
+
+<a href="/">Cancel</a>
+<button type="submit">Save</button>

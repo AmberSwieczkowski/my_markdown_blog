@@ -1,0 +1,31 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/my_markdown_blog.css" />
+    <title>Blog</title>
+  </head>
+  <body>
+    <div class="all__articles">
+      <%- include('../partials/_navbar.ejs') %>
+      <h1>All Articles</h1>
+
+      <% articles.forEach(article => { %>
+      <div>
+        <h4><%= article.title %></h4>
+        <div><%= article.createdAt.toLocaleDateString() %></div>
+        <div><%= article.description %></div>
+        <a href="articles/<%= article.slug %> ">Read More</a>
+        <a href="articles/edit/<%= article.id %> ">Edit</a>
+        <form action="/articles/<%= article.id %>?_method=DELETE" method="POST">
+          <button type="submit">Delete</button>
+        </form>
+      </div>
+      <% }) %>
+    </div>
+  </body>
+</html>

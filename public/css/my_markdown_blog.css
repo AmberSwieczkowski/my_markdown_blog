@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #699ba6;
+}
+
+.navbar {
+    float: right;
+    margin-right: 30px;
+}
+
+.all__articles {
+    color: black;
+    margin: 10px;
+}
+
+.all__articles h1 {
+    margin: 20px;
+}
+
+.each__article {
+    background-color: #699ba6;
+}
+
+.new__btn, 
+.home__btn {
+    width: 100%;
+    float: right;
+    color: red;
+    border: 3px solid red;
+}
