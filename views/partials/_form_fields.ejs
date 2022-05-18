@@ -1,15 +1,26 @@
-<div>
+<!-- @format -->
+<div class="form__fields">
+  <div class="edit__title">
     <label for="title">Title</label>
-    <input required type="text" name="title" id="title" value="<%= article.title %>">
-</div>
-<div>
+    <input
+      required
+      type="text"
+      name="title"
+      id="title"
+      value="<%= article.title %>"
+    />
+  </div>
+  <div class="edit__description">
     <label for="description">Description</label>
-    <textarea name="description" id="description"><%= article.description %></textarea>
-</div>
-<div>
+    <textarea name="description" id="description"><%= article.description %></textarea
+    >
+  </div>
+  <div class="edit__markdown">
     <label for="markdown">Markdown</label>
-    <textarea required name="markdown" id="markdown"><%= article.markdown %></textarea>
-</div>
+    <textarea required name="markdown" id="markdown"><%= article.markdown %></textarea
+    >
+  </div>
 
-<a href="/">Cancel</a>
-<button type="submit">Save</button>
+  <a class="cancel__btn" href="/">Cancel</a>
+  <button class="save__btn" type="submit">Save</button>
+</div>

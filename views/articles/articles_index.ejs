@@ -10,20 +10,16 @@
     <title>Blog</title>
   </head>
   <body>
+    <%- include('../partials/_navbar.ejs') %>
     <div class="all__articles">
-      <%- include('../partials/_navbar.ejs') %>
-      <h1>All Articles</h1>
 
       <% articles.forEach(article => { %>
-      <div>
-        <h4><%= article.title %></h4>
-        <div><%= article.createdAt.toLocaleDateString() %></div>
-        <div><%= article.description %></div>
-        <a href="articles/<%= article.slug %> ">Read More</a>
-        <a href="articles/edit/<%= article.id %> ">Edit</a>
-        <form action="/articles/<%= article.id %>?_method=DELETE" method="POST">
-          <button type="submit">Delete</button>
-        </form>
+        <div class="list__of__articles article">
+        <a class="read__more__btn article" href="articles/<%= article.slug %> ">
+        <h4 class="article__title article"><%= article.title %></h4>
+        <div class="article__description article"><%= article.description %></div>
+        <div class="article__date article"><%= article.createdAt.toLocaleDateString() %></div>
+      </a>
       </div>
       <% }) %>
     </div>

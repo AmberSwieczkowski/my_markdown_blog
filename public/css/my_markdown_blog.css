@@ -1,32 +1,243 @@
+/** @format */
+
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    background-color: #699ba6;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-image: url('../images/drop-in-water-with-black-background.jpeg');
+  background-size: cover;
+  background-position-y: bottom;
+  background-color: #000000;
+  height: 100vh;
 }
 
 .navbar {
-    float: right;
-    margin-right: 30px;
+  min-width: 280px;
+  width: 100vw;
+  text-align: right;
+  position: fixed;
+  top: 0;
+  height: 60px;
+  z-index: 100;
+}
+
+.navbar a {
+  color: #069cbf;
+  margin-right: 30px;
+  text-decoration: none;
+  font-size: 2rem;
 }
 
 .all__articles {
-    color: black;
-    margin: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  flex: 0 0;
+  justify-content: space-evenly;
+  align-items: center;
+  align-self: center;
+  position: relative;
+  top: 80px;
 }
 
-.all__articles h1 {
-    margin: 20px;
+.list__of__articles a {
+  text-decoration: none;
 }
 
-.each__article {
-    background-color: #699ba6;
+.list__of__articles {
+  position: relative;
+  /* background: linear-gradient(to right, #025E73 50%, #0396A6 100%); */
+  background-color: #000000;
+  border: 2px solid #069cbf;
+  border-radius: 10px;
+  margin: 10px auto;
+  padding: 5px 10px;
+  text-align: center;
+  width: 300px;
 }
 
-.new__btn, 
-.home__btn {
-    width: 100%;
-    float: right;
-    color: red;
-    border: 3px solid red;
+@media screen and (max-width: 800px) {
+  .list__of__articles {
+    width: 100vw;
+  }
+}
+
+.list__of__articles:hover {
+  background-color: #069cbf;
+  /* border: 2px solid #000000; */
+  cursor: pointer;
+}
+
+.article__title {
+  /* color: #96dddd; */
+  color: #ebebeb;
+  font-size: 1.5rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 10px auto;
+}
+
+.article__date {
+  color: #f0f0e1;
+  font-size: 0.8rem;
+  text-align: end;
+  margin-right: 10px;
+}
+
+.article__description {
+  color: #ebebeb;
+  font-family: cursive;
+  font-size: 1rem;
+  margin: 0px 15px;
+  text-align: center;
+}
+
+/* Show Page */
+
+.article__btns {
+  display: block;
+  justify-content: end;
+  align-items: center;
+  margin: auto;
+  float: right;
+}
+
+.show__article {
+  position: relative;
+  top: 80px;
+  /* background: linear-gradient(to right, #025E73 50%, #0396A6 100%); */
+  background-color: #000000;
+  border: 2px solid #069cbf;
+  border-radius: 10px;
+  margin: 10px auto;
+  padding: 5px 40px;
+  text-align: center;
+}
+
+.show__article__date {
+  color: #bbbbbb;
+  text-align: center;
+  font-size: 1rem;
+  margin: 20px auto;
+}
+
+.article__markdown__wrapper {
+  background-color: #000000;
+  color: #ebebeb;
+  /* border: 1px solid #069cbf; */
+  margin: 40px auto;
+  position: relative;
+}
+
+.article__markdown {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.5rem;
+  text-align: start;
+  width: 100%;
+  padding-bottom: 80px;
+}
+
+.form__fields {
+  background-color: #000000;
+  opacity: 0.95;
+  color: #069cbf;
+  border: 2px solid #069cbf;
+  border-radius: 10px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.delete__btn {
+  position: relative;
+}
+
+.delete__btn__div,
+.save__btn {
+  text-align: center;
+}
+
+.delete__btn,
+.save__btn {
+  background-color: #000000;
+  color: #ebebeb;
+  border: 2px solid #ebebeb;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.delete__btn:hover,
+.save__btn:hover {
+  background-color: #ebebeb;
+  color: #0d0d0d;
+  border: 2px solid #0d0d0d;
+  cursor: pointer;
+}
+
+.cancel__btn {
+  background-color: #000000;
+  color: #069cbf;
+  border: 2px solid #069cbf;
+  border-radius: 5px;
+  padding: 5px 10px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.cancel__btn:hover {
+  background-color: #069cbf;
+  color: #0d0d0d;
+  border: 2px solid #0d0d0d;
+  cursor: pointer;
+}
+
+/* New and Edit Page */
+.new__article__title {
+  top: 80px;
+  color: #ebebeb;
+}
+
+.edit__title input:focus,
+.edit__description textarea:focus,
+.edit__markdown textarea:focus {
+  color: #000000;
+  /* background-color: #ebebeb; */
+  background: #ebebeb;
+}
+
+.edit__articles {
+  position: relative;
+  top: 80px;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.edit__title,
+.edit__description,
+.edit__markdown {
+  text-align: left;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.edit__articles input {
+  width: 100%;
+  font-family: fantasy;
+}
+
+.edit__articles textarea {
+  width: 100%;
+  resize: none;
+}
+
+.edit__description textarea {
+  font-family: cursive;
+}
+
+.edit__markdown textarea {
+  height: 500px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
